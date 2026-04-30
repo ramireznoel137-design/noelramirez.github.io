@@ -1405,9 +1405,9 @@ a {
   }
 
   .hero-person {
-    top: 250px;
-    width: min(72vw, 220px);
-    opacity: .08;
+    top: 200px;
+    width: min(75vw, 240px);
+    opacity: .2;
   }
 
   .section-title {
