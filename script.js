@@ -22,7 +22,7 @@ const stepTitles = document.querySelectorAll('.step-title');
 const stepDots = document.querySelectorAll('.step-dot');
 
 
-const WHATSAPP_NUMBER = '5215530537788';
+const WHATSAPP_NUMBER = '5214421809735';
 
 function currency(value) {
   return new Intl.NumberFormat('es-MX', {
