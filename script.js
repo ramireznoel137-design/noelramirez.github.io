@@ -2,6 +2,8 @@ const contribution = document.querySelector('#contribution');
 const amountText = document.querySelector('#amountText');
 const annualAmount = document.querySelector('#annualAmount');
 const totalAmount = document.querySelector('#totalAmount');
+const expectedAmount = document.querySelector('#expectedAmount');
+const finalYearAmount = document.querySelector('#finalYearAmount');
 
 const income = document.querySelector('#income');
 const age = document.querySelector('#age');
@@ -50,9 +52,21 @@ function updateEstimate() {
   const annual = monthly * 12;
   const total20Years = annual * 20;
 
+  // Como no hay backend ni tabla actuarial,
+  // usamos la aportación total a 20 años como suma asegurada estimada de referencia.
+  const estimatedSumAssured = total20Years;
+
+  // Según el material comercial:
+  // total estimado = 115% de la suma asegurada
+  // último año = 80% de la suma asegurada
+  const expectedTotal = estimatedSumAssured * 1.15;
+  const finalYear = estimatedSumAssured * 0.80;
+
   amountText.textContent = currency(monthly).replace('MXN', '').trim();
   annualAmount.textContent = currency(annual).replace('MXN', '').trim();
   totalAmount.textContent = currency(total20Years).replace('MXN', '').trim();
+  expectedAmount.textContent = currency(expectedTotal).replace('MXN', '').trim();
+  finalYearAmount.textContent = currency(finalYear).replace('MXN', '').trim();
 }
 
 function setStep(stepNumber) {
